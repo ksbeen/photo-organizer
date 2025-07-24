@@ -3,7 +3,7 @@
 
 사용자 정보를 받아 데이터베이스에 저장합니다.
 
-Endpoint: `POST /api/auth/signup`
+- Endpoint: `POST /api/auth/signup`
 
 Request Body:
 
@@ -15,16 +15,18 @@ Request Body:
 ```
 Success Response (200 OK):
 
-JSON
+```JSON
 {
   "message": "User registered successfully!"
 }
+```
 Failure Response (400 Bad Request):
 
-JSON
+```JSON
 {
   "error": "Username is already taken!"
 }
+```
 1.2. 로그인
 
 사용자 정보가 유효하면, 앞으로의 요청에 사용할 JWT를 발급합니다.
