@@ -5,7 +5,7 @@
 
 - Endpoint: `POST /api/auth/signup`
 
-Request Body:
+- Request Body:
 
 ```JSON
 {
@@ -13,14 +13,14 @@ Request Body:
   "password": "password123"
 }
 ```
-Success Response (200 OK):
+- Success Response (`200 OK`):
 
 ```JSON
 {
   "message": "User registered successfully!"
 }
 ```
-Failure Response (400 Bad Request):
+- Failure Response (`400 Bad Request`):
 
 ```JSON
 {
@@ -31,28 +31,31 @@ Failure Response (400 Bad Request):
 
 사용자 정보가 유효하면, 앞으로의 요청에 사용할 JWT를 발급합니다.
 
-Endpoint: POST /api/auth/signin
+- Endpoint: `POST /api/auth/signin`
 
-Request Body:
+- Request Body:
 
-JSON
+```JSON
 {
   "username": "user@example.com",
   "password": "password123"
 }
-Success Response (200 OK):
+```
+- Success Response (`200 OK`):
 
-JSON
+```JSON
 {
   "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzIxOD...",
   "tokenType": "Bearer"
 }
-Failure Response (401 Unauthorized):
+```
+- Failure Response (`401 Unauthorized`):
 
-JSON
+```JSON
 {
   "error": "Invalid username or password"
 }
+```
 2. 이미지 처리 (Image Processing)
 Note: 모든 이미지 처리 API는 HTTP 헤더에 Authorization: Bearer <JWT_TOKEN> 형식의 인증 토큰이 필요합니다.
 
@@ -60,29 +63,30 @@ Note: 모든 이미지 처리 API는 HTTP 헤더에 Authorization: Bearer <JWT_T
 
 여러 개의 이미지 파일을 서버에 업로드하여 분석을 요청합니다.
 
-Endpoint: POST /api/images/upload
+- Endpoint: `POST /api/images/upload`
 
-Request (multipart/form-data):
+- Request (`multipart/form-data`):
 
-Key: files
+  - Key: `files`
 
-Value: 이미지 파일 배열 (.jpg, .png 등)
+  - Value: 이미지 파일 배열 (`.jpg`, `.png` 등)
 
-Success Response (202 Accepted):
+- Success Response (`202 Accepted`):
 
-JSON
+```JSON
 {
   "message": "Upload successful. Image processing has started."
 }
+```
 2.2. 분석 그룹 목록 조회
 
 AI 분석을 통해 생성된 이미지 그룹들의 목록을 조회합니다.
 
-Endpoint: GET /api/images/groups
+- Endpoint: `GET /api/images/groups`
 
-Success Response (200 OK):
+- Success Response (`200 OK`):
 
-JSON
+```JSON
 {
   "groups": [
     {
@@ -99,15 +103,16 @@ JSON
     }
   ]
 }
+```
 2.3. 특정 그룹 상세 조회
 
 특정 그룹에 속한 이미지들의 상세 정보를 조회합니다.
 
-Endpoint: GET /api/images/groups/{groupId}
+- Endpoint: `GET /api/images/groups/{groupId}`
 
-Success Response (200 OK):
+- Success Response (`200 OK`):
 
-JSON
+```JSON
 {
   "groupId": 1,
   "groupName": "고양이",
@@ -126,34 +131,37 @@ JSON
     }
   ]
 }
+```
 2.4. 그룹 이름 변경
 
 특정 그룹의 이름을 사용자가 원하는 이름으로 변경합니다.
 
-Endpoint: PUT /api/images/groups/{groupId}
+- Endpoint: `PUT /api/images/groups/{groupId}`
 
-Request Body:
+- Request Body:
 
-JSON
+``` JSON
 {
   "groupName": "사랑스러운 냥이들"
 }
-Success Response (200 OK):
+```
+- Success Response (`200 OK`):
 
-JSON
+```JSON
 {
   "message": "Group name updated successfully."
 }
+```
 2.5. 그룹 ZIP 파일 다운로드
 
 하나 또는 여러 그룹을 선택하여 ZIP 파일로 압축해 다운로드합니다.
 
-Endpoint: GET /api/images/download/zip
+- Endpoint: `GET /api/images/download/zip`
 
-Query Parameter: ?groupIds={groupId1},{groupId2}
+- Query Parameter: `?groupIds={groupId1},{groupId2}`
 
-Success Response (200 OK):
+- Success Response (`200 OK`):
 
-Body: 실제 ZIP 파일 데이터 (application/zip)
+  - Body: 실제 ZIP 파일 데이터 (`application/zip`)
 
-Headers: Content-Disposition: attachment; filename="classified_photos.zip"
+  - Headers: `Content-Disposition: attachment; filename="classified_photos.zip"`
