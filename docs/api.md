@@ -3,7 +3,7 @@
 
 사용자 정보를 받아 데이터베이스에 저장합니다.
 
-***- Endpoint: `POST /api/auth/signup`
+***- Endpoint: `POST /api/auth/signup`***
 
 - Request Body:
 
