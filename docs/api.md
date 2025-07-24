@@ -1,5 +1,5 @@
-<h3>1. 인증 (Authentication)
-<h4>1.1. 회원가입
+### 1. 인증 (Authentication)
+#### 1.1. 회원가입
 
 사용자 정보를 받아 데이터베이스에 저장합니다.
 
@@ -56,8 +56,8 @@
   "error": "Invalid username or password"
 }
 ```
-<h3>2. 이미지 처리 (Image Processing)
-<h4>Note: 모든 이미지 처리 API는 HTTP 헤더에 Authorization: Bearer <JWT_TOKEN> 형식의 인증 토큰이 필요합니다.
+### 2. 이미지 처리 (Image Processing)
+#### Note: 모든 이미지 처리 API는 HTTP 헤더에 Authorization: Bearer <JWT_TOKEN> 형식의 인증 토큰이 필요합니다.
 
 2.1. 이미지 업로드
 
