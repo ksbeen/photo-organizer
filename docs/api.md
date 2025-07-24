@@ -1,4 +1,4 @@
-1. 인증 (Authentication)
+<h1>1. 인증 (Authentication)
 1.1. 회원가입
 
 사용자 정보를 받아 데이터베이스에 저장합니다.
