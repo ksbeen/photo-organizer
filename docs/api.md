@@ -7,11 +7,12 @@ Endpoint: POST /api/auth/signup
 
 Request Body:
 
-JSON
+```JSON
 {
   "username": "user@example.com",
   "password": "password123"
 }
+```
 Success Response (200 OK):
 
 JSON
