@@ -1,4 +1,4 @@
-# photo-organizer
+# Photo-organizer
 
 AI를 활용하여 사용자의 사진을 자동으로 분류하고 정리해주는 웹 서비스입니다.
 
